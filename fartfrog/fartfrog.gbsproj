@@ -385,14 +385,27 @@
                 {
                     "command": "EVENT_CALL_CUSTOM_EVENT",
                     "args": {
-                        "customEventId": "a764f09f-55a6-4e97-989e-b3f32eb3a6a2"
+                        "customEventId": "a764f09f-55a6-4e97-989e-b3f32eb3a6a2",
+                        "__collapse": false
                     },
                     "id": "d9f11974-cf92-4310-bb9f-bef2c04b91e8"
+                },
+                {
+                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                    "args": {
+                        "customEventId": "05b4b177-d140-4ee1-b788-a19d050ea124",
+                        "$variable[V0]$": {
+                            "type": "variable",
+                            "value": "0"
+                        }
+                    },
+                    "id": "54d036cf-5e3a-478c-a3c2-91fd9a34d653"
                 }
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "autoFadeEventCollapse": true
         }
     ],
     "backgrounds": [
@@ -1218,7 +1231,7 @@
         {
             "id": "a764f09f-55a6-4e97-989e-b3f32eb3a6a2",
             "name": "Only run while jumping",
-            "description": "Only run while jumping",
+            "description": "If you hold down the jump/run button you enter an endless leapfrogging state",
             "variables": {},
             "actors": {},
             "symbol": "script_1",
@@ -1238,7 +1251,7 @@
                                         "a"
                                     ],
                                     "__collapseElse": false,
-                                    "__collapse": false
+                                    "__collapse": true
                                 },
                                 "children": {
                                     "true": [
@@ -1258,6 +1271,137 @@
                         ]
                     },
                     "id": "e6b738c1-89f0-42a7-9f4a-eb2da4b80336"
+                }
+            ]
+        },
+        {
+            "id": "05b4b177-d140-4ee1-b788-a19d050ea124",
+            "name": "Fart Jump",
+            "description": "",
+            "variables": {
+                "V0": {
+                    "id": "V0",
+                    "name": "Fart Allow",
+                    "passByReference": true
+                }
+            },
+            "actors": {},
+            "symbol": "script_2",
+            "script": [
+                {
+                    "command": "EVENT_SET_TRUE",
+                    "args": {
+                        "variable": "V0"
+                    },
+                    "id": "80288913-5d2f-4190-ab5e-1b157c26fc3c"
+                },
+                {
+                    "command": "EVENT_SET_INPUT_SCRIPT",
+                    "args": {
+                        "input": [
+                            "b"
+                        ],
+                        "override": true,
+                        "__scriptTabs": "press",
+                        "__collapse": false
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_IF_TRUE",
+                                "args": {
+                                    "variable": "0",
+                                    "__collapseElse": true,
+                                    "__collapse": false
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_PLAYER_BOUNCE",
+                                            "args": {
+                                                "height": "medium",
+                                                "__collapse": false
+                                            },
+                                            "id": "a26a3ac5-7e96-42c9-bbb7-6e05fb67ce58"
+                                        },
+                                        {
+                                            "command": "EVENT_SET_FALSE",
+                                            "args": {
+                                                "variable": "0",
+                                                "__collapse": false
+                                            },
+                                            "id": "894cd08a-2912-4fbd-846c-c1909eabd035"
+                                        },
+                                        {
+                                            "command": "EVENT_ENGINE_FIELD_SET",
+                                            "args": {
+                                                "engineFieldKey": "plat_air_control",
+                                                "value": {
+                                                    "type": "select",
+                                                    "value": 0
+                                                },
+                                                "__collapse": true
+                                            },
+                                            "id": "9fef0a6d-3bb2-4325-9fdd-05ab2039215c"
+                                        },
+                                        {
+                                            "command": "EVENT_ENGINE_FIELD_SET",
+                                            "args": {
+                                                "engineFieldKey": "plat_max_fall_vel",
+                                                "value": {
+                                                    "type": "slider",
+                                                    "value": 10000
+                                                },
+                                                "__collapse": true
+                                            },
+                                            "id": "4bc97b75-da63-48e9-9afa-3266ac0bbd54"
+                                        },
+                                        {
+                                            "command": "PM_EVENT_PLATPLUS_STATE_SCRIPT",
+                                            "args": {
+                                                "state": "3",
+                                                "__scriptTabs": "scriptinput",
+                                                "__collapse": false
+                                            },
+                                            "children": {
+                                                "script": [
+                                                    {
+                                                        "command": "EVENT_ENGINE_FIELD_SET",
+                                                        "args": {
+                                                            "engineFieldKey": "plat_max_fall_vel"
+                                                        },
+                                                        "id": "8e25edab-414f-48ae-a617-24ef07e219d2"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_ENGINE_FIELD_SET",
+                                                        "args": {
+                                                            "engineFieldKey": "plat_air_control",
+                                                            "value": {
+                                                                "type": "select",
+                                                                "value": 0
+                                                            }
+                                                        },
+                                                        "id": "ccea4884-e78d-408a-8df0-3f9a2867a020"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_SET_TRUE",
+                                                        "args": {
+                                                            "variable": "0"
+                                                        },
+                                                        "id": "e240e356-9e9f-4e71-9757-c0484c2c8158"
+                                                    }
+                                                ]
+                                            },
+                                            "id": "6bc54257-68a0-43d1-8e7c-fc0067dd7a54"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "c9be6b67-ad84-4545-a7c6-393ab574f073"
+                            }
+                        ]
+                    },
+                    "id": "b686de13-9492-4204-b0f3-3daeac5b3497"
                 }
             ]
         }
@@ -1358,7 +1502,13 @@
             "filename": "sweat.png"
         }
     ],
-    "variables": [],
+    "variables": [
+        {
+            "id": "0",
+            "name": "Fart Allow",
+            "symbol": "var_fart_allow"
+        }
+    ],
     "engineFieldValues": [
         {
             "id": "fade_style",

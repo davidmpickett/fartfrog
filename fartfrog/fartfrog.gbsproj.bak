@@ -381,7 +381,15 @@
             "y": 74,
             "actors": [],
             "triggers": [],
-            "script": [],
+            "script": [
+                {
+                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                    "args": {
+                        "customEventId": "a764f09f-55a6-4e97-989e-b3f32eb3a6a2"
+                    },
+                    "id": "d9f11974-cf92-4310-bb9f-bef2c04b91e8"
+                }
+            ],
             "playerHit1Script": [],
             "playerHit2Script": [],
             "playerHit3Script": []
@@ -1206,7 +1214,54 @@
             ]
         }
     ],
-    "customEvents": [],
+    "customEvents": [
+        {
+            "id": "a764f09f-55a6-4e97-989e-b3f32eb3a6a2",
+            "name": "Only run while jumping",
+            "description": "Only run while jumping",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_1",
+            "script": [
+                {
+                    "command": "PM_EVENT_PLATPLUS_STATE_SCRIPT",
+                    "args": {
+                        "state": "4",
+                        "__scriptTabs": "scriptinput"
+                    },
+                    "children": {
+                        "script": [
+                            {
+                                "command": "EVENT_IF_INPUT",
+                                "args": {
+                                    "input": [
+                                        "a"
+                                    ],
+                                    "__collapseElse": false,
+                                    "__collapse": false
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "PM_EVENT_SET_PP_STATE",
+                                            "args": {
+                                                "state": "6",
+                                                "field": "que_state"
+                                            },
+                                            "id": "c9b8f0a6-f02c-43fa-899c-b15d354e9402"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "f87e5fec-b4d8-4b08-b508-a31dfa46d863"
+                            }
+                        ]
+                    },
+                    "id": "e6b738c1-89f0-42a7-9f4a-eb2da4b80336"
+                }
+            ]
+        }
+    ],
     "music": [
         {
             "id": "f50428ab-a084-4591-9bba-2ba10fe7b1c6",
@@ -1367,7 +1422,7 @@
         },
         {
             "id": "plat_walk_vel",
-            "value": 1000
+            "value": 500
         },
         {
             "id": "plat_hold_grav",
@@ -1383,7 +1438,7 @@
         },
         {
             "id": "plat_run_vel",
-            "value": 8000
+            "value": 6000
         },
         {
             "id": "plat_walk_acc",
