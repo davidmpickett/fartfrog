@@ -1311,7 +1311,7 @@
         },
         {
             "id": "plat_dash_momentum",
-            "value": 0
+            "value": 3
         },
         {
             "id": "plat_dash_style",
@@ -1319,11 +1319,11 @@
         },
         {
             "id": "plat_dash",
-            "value": 0
+            "value": 1
         },
         {
             "id": "plat_run_type",
-            "value": 3
+            "value": 0
         },
         {
             "id": "INPUT_PLATFORM_INTERACT",
@@ -1331,83 +1331,15 @@
         },
         {
             "id": "plat_climb_vel",
-            "value": 6400
+            "value": 1600
         },
         {
             "id": "plat_run_acc",
-            "value": 400
+            "value": 152
         },
         {
             "id": "plat_jump_vel",
             "value": 8000
-        },
-        {
-            "id": "plat_dash_through",
-            "value": 0
-        },
-        {
-            "id": "plat_hold_jump_max",
-            "value": 4
-        },
-        {
-            "id": "plat_extra_jumps",
-            "value": 0
-        },
-        {
-            "id": "plat_jump_reduction",
-            "value": 4000
-        },
-        {
-            "id": "plat_grav",
-            "value": 800
-        },
-        {
-            "id": "plat_dec",
-            "value": 600
-        },
-        {
-            "id": "plat_walk_vel",
-            "value": 1000
-        },
-        {
-            "id": "plat_hold_grav",
-            "value": 400
-        },
-        {
-            "id": "plat_air_dec",
-            "value": 200
-        },
-        {
-            "id": "INPUT_PLATFORM_RUN",
-            "value": "INPUT_A"
-        },
-        {
-            "id": "plat_run_vel",
-            "value": 8000
-        },
-        {
-            "id": "plat_walk_acc",
-            "value": 200
-        },
-        {
-            "id": "plat_min_vel",
-            "value": 200
-        },
-        {
-            "id": "plat_run_boost",
-            "value": 0
-        },
-        {
-            "id": "plat_turn_control",
-            "value": 0
-        },
-        {
-            "id": "plat_air_control",
-            "value": 0
-        },
-        {
-            "id": "plat_buffer_max",
-            "value": 6
         }
     ],
     "settings": {
