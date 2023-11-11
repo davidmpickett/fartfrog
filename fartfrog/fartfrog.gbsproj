@@ -2819,6 +2819,14 @@
                                 "children": {
                                     "true": [
                                         {
+                                            "command": "EVENT_SET_FALSE",
+                                            "args": {
+                                                "variable": "0",
+                                                "__collapse": true
+                                            },
+                                            "id": "894cd08a-2912-4fbd-846c-c1909eabd035"
+                                        },
+                                        {
                                             "command": "PM_EVENT_PLATPLUS_DETACH_PLAYER",
                                             "args": {
                                                 "state": "0",
@@ -2826,34 +2834,6 @@
                                                 "__collapse": true
                                             },
                                             "id": "c0a58638-f792-4f38-8e2c-6aef417958f7"
-                                        },
-                                        {
-                                            "command": "EVENT_PLAYER_BOUNCE",
-                                            "args": {
-                                                "height": "medium",
-                                                "__collapse": true
-                                            },
-                                            "id": "a26a3ac5-7e96-42c9-bbb7-6e05fb67ce58"
-                                        },
-                                        {
-                                            "command": "EVENT_SET_FALSE",
-                                            "args": {
-                                                "variable": "0",
-                                                "__collapse": false
-                                            },
-                                            "id": "894cd08a-2912-4fbd-846c-c1909eabd035"
-                                        },
-                                        {
-                                            "command": "EVENT_ENGINE_FIELD_SET",
-                                            "args": {
-                                                "engineFieldKey": "plat_air_control",
-                                                "value": {
-                                                    "type": "select",
-                                                    "value": 0
-                                                },
-                                                "__collapse": true
-                                            },
-                                            "id": "9fef0a6d-3bb2-4325-9fdd-05ab2039215c"
                                         },
                                         {
                                             "command": "EVENT_ENGINE_FIELD_SET",
@@ -2866,6 +2846,14 @@
                                                 "__collapse": true
                                             },
                                             "id": "4bc97b75-da63-48e9-9afa-3266ac0bbd54"
+                                        },
+                                        {
+                                            "command": "EVENT_PLAYER_BOUNCE",
+                                            "args": {
+                                                "height": "medium",
+                                                "__collapse": true
+                                            },
+                                            "id": "a26a3ac5-7e96-42c9-bbb7-6e05fb67ce58"
                                         },
                                         {
                                             "command": "EVENT_LAUNCH_PROJECTILE",
@@ -2888,7 +2876,7 @@
                                                 "destroyOnHit": false,
                                                 "collisionGroup": "3",
                                                 "collisionMask": [],
-                                                "__collapse": false
+                                                "__collapse": true
                                             },
                                             "id": "193041a3-6d3f-4419-b7ae-daf49b5b08a7"
                                         },
@@ -2897,27 +2885,17 @@
                                             "args": {
                                                 "state": "3",
                                                 "__scriptTabs": "scriptinput",
-                                                "__collapse": true
+                                                "__collapse": false
                                             },
                                             "children": {
                                                 "script": [
                                                     {
                                                         "command": "EVENT_ENGINE_FIELD_SET",
                                                         "args": {
-                                                            "engineFieldKey": "plat_max_fall_vel"
+                                                            "engineFieldKey": "plat_max_fall_vel",
+                                                            "__collapse": true
                                                         },
                                                         "id": "8e25edab-414f-48ae-a617-24ef07e219d2"
-                                                    },
-                                                    {
-                                                        "command": "EVENT_ENGINE_FIELD_SET",
-                                                        "args": {
-                                                            "engineFieldKey": "plat_air_control",
-                                                            "value": {
-                                                                "type": "select",
-                                                                "value": 0
-                                                            }
-                                                        },
-                                                        "id": "ccea4884-e78d-408a-8df0-3f9a2867a020"
                                                     },
                                                     {
                                                         "command": "EVENT_SET_TRUE",
@@ -3153,6 +3131,18 @@
         {
             "id": "plat_mp_group",
             "value": 2
+        },
+        {
+            "id": "plat_coyote_max",
+            "value": 1
+        },
+        {
+            "id": "plat_float_input",
+            "value": 0
+        },
+        {
+            "id": "plat_float_grav",
+            "value": 1000
         }
     ],
     "settings": {

@@ -1590,7 +1590,8 @@
             "height": 36,
             "imageWidth": 320,
             "imageHeight": 288,
-            "filename": "level_01.png"
+            "filename": "level_01.png",
+            "tileColors": []
         },
         {
             "id": "1e5f9d6a-bdbc-43e6-8c34-22f5bb5dea05",
@@ -2157,7 +2158,7 @@
                 {
                     "id": "dd251c56-c734-49eb-8281-01a7c459fad2",
                     "name": "",
-                    "animationType": "multi_movement",
+                    "animationType": "fixed",
                     "flipLeft": true,
                     "animations": [
                         {
@@ -2165,7 +2166,21 @@
                             "frames": [
                                 {
                                     "id": "efca496b-92b9-4381-add0-97ba001a2d35",
-                                    "tiles": []
+                                    "tiles": [
+                                        {
+                                            "id": "e2ac8295-8c07-4207-ac49-18e02ab8951f",
+                                            "x": 0,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": -8,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -2235,13 +2250,13 @@
                     ]
                 }
             ],
-            "numTiles": 0,
-            "canvasWidth": 32,
-            "canvasHeight": 32,
+            "numTiles": 1,
+            "canvasWidth": 16,
+            "canvasHeight": 16,
             "boundsX": 0,
             "boundsY": 0,
-            "boundsWidth": 16,
-            "boundsHeight": 16,
+            "boundsWidth": 8,
+            "boundsHeight": 8,
             "animSpeed": 15
         },
         {
@@ -2423,7 +2438,7 @@
                                         },
                                         {
                                             "id": "2e22a4fc-0615-41b3-8fad-54371a5b590a",
-                                            "x": 8,
+                                            "x": 9,
                                             "y": 0,
                                             "sliceX": 8,
                                             "sliceY": 0,
@@ -2432,6 +2447,68 @@
                                             "palette": 0,
                                             "paletteIndex": 0,
                                             "objPalette": "OBP0",
+                                            "priority": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "16bd0c8a-7a6b-4ddc-8ce7-60c17898a1f7",
+                                    "tiles": [
+                                        {
+                                            "id": "4b8a7be6-67ee-4274-a2b7-1769b0fa79fb",
+                                            "x": -2,
+                                            "y": -1,
+                                            "sliceX": 0,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "003a956a-46e5-40f2-b077-1d71295862af",
+                                            "x": 10,
+                                            "y": -1,
+                                            "sliceX": 8,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "3df43e26-7cb6-4438-846b-cd7e113ad7cd",
+                                    "tiles": [
+                                        {
+                                            "id": "6ae53e63-c42a-4e4c-8d3f-5eb8515dd0f8",
+                                            "x": -3,
+                                            "y": -1,
+                                            "sliceX": 0,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "314170b3-5699-4055-af01-a95fcac29a88",
+                                            "x": 11,
+                                            "y": -1,
+                                            "sliceX": 8,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
                                             "priority": false
                                         }
                                     ]
@@ -2742,10 +2819,19 @@
                                 "children": {
                                     "true": [
                                         {
+                                            "command": "PM_EVENT_PLATPLUS_DETACH_PLAYER",
+                                            "args": {
+                                                "state": "0",
+                                                "field": "actor_attached",
+                                                "__collapse": true
+                                            },
+                                            "id": "c0a58638-f792-4f38-8e2c-6aef417958f7"
+                                        },
+                                        {
                                             "command": "EVENT_PLAYER_BOUNCE",
                                             "args": {
                                                 "height": "medium",
-                                                "__collapse": false
+                                                "__collapse": true
                                             },
                                             "id": "a26a3ac5-7e96-42c9-bbb7-6e05fb67ce58"
                                         },
@@ -2782,11 +2868,36 @@
                                             "id": "4bc97b75-da63-48e9-9afa-3266ac0bbd54"
                                         },
                                         {
+                                            "command": "EVENT_LAUNCH_PROJECTILE",
+                                            "args": {
+                                                "spriteSheetId": "daf95270-e30d-423b-9ee7-990ae29f57f6",
+                                                "spriteStateId": "",
+                                                "actorId": "$self$",
+                                                "x": 0,
+                                                "y": 0,
+                                                "otherActorId": "$self$",
+                                                "direction": "down",
+                                                "angle": 170,
+                                                "angleVariable": "0",
+                                                "directionType": "direction",
+                                                "initialOffset": 0,
+                                                "speed": 0,
+                                                "animSpeed": 31,
+                                                "lifeTime": 1,
+                                                "loopAnim": false,
+                                                "destroyOnHit": false,
+                                                "collisionGroup": "3",
+                                                "collisionMask": [],
+                                                "__collapse": false
+                                            },
+                                            "id": "193041a3-6d3f-4419-b7ae-daf49b5b08a7"
+                                        },
+                                        {
                                             "command": "PM_EVENT_PLATPLUS_STATE_SCRIPT",
                                             "args": {
                                                 "state": "3",
                                                 "__scriptTabs": "scriptinput",
-                                                "__collapse": false
+                                                "__collapse": true
                                             },
                                             "children": {
                                                 "script": [
@@ -3083,7 +3194,7 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            445,
+            448,
             135,
             135
         ],
